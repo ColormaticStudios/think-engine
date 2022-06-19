@@ -1,6 +1,6 @@
 require "./libsocket/socket"
 
-CONFIG = {
+Config = {
    "test" => "let's go"
 }
 
@@ -11,7 +11,7 @@ def cycle()
 end
 
 def init()
-   puts CONFIG["test"]
+   puts Config["test"]
    puts Socket::Test
    #cycle()
 end
