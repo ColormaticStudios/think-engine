@@ -1,8 +1,5 @@
-require "./libsocket/socket"
-
-Config = {
-   "test" => "let's go"
-}
+require "./config/config"
+require "./socket/socket"
 
 
 def cycle()
@@ -12,7 +9,9 @@ end
 
 def init()
    puts Config["test"]
-   puts Socket::Test
+   basic_socket = Socket.new
+   puts basic_socket.@test
+   basic_socket.function
    #cycle()
 end
 
