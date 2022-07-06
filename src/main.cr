@@ -1,5 +1,5 @@
-require "./config/config"
-require "./socket/socket"
+require "./config"
+require "./socket"
 
 
 def cycle()
@@ -8,10 +8,10 @@ def cycle()
 end
 
 def init()
-   puts Config["test"]
    basic_socket = Socket.new
    puts basic_socket.@test
-   basic_socket.function
+   basic_socket.open
+   puts Config
    #cycle()
 end
 
