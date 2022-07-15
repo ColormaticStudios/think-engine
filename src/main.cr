@@ -13,8 +13,11 @@ include Config
 def init
   basic_socket = Socket.new
   #puts basic_socket.@test
-  #basic_socket.open
-  puts load_config
+  basic_socket.open
+  config = load_config
+  puts config
+  basic_module = Module.new
+  basic_module.load_module
   #cycle()
 end
 

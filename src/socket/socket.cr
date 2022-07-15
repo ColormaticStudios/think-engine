@@ -1,6 +1,6 @@
 class Socket
    @test = "thing"
-   def self.open
+   def open
       #puts "this is a function"
    end
 end
