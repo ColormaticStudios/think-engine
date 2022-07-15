@@ -9,6 +9,7 @@ module Config
       config = JSON.parse(File.read("#{Path.home}/.local/share/think/config.json")) #if so, load it
     else
       puts "It seems the config file at #{Path.home}/.local/share/think/config.json doesn't exist. create it now? (y/n)" #if the config file dosen't exist, ask the user if it should be created
+      print("> ")
       option = gets
       exit if option.nil? # Ctrl+D
       option_text = option.presence

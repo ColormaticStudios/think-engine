@@ -1,5 +1,6 @@
 require "./config"
 require "./socket"
+require "./module"
 
 
 def cycle
