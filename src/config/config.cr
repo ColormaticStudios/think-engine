@@ -36,6 +36,6 @@ module Config
         end
       end
     end
-    return JSON.parse(Default_config) #give the config as a hash
+    #return JSON.parse(Default_config) #give the config as a hash
   end
 end
