@@ -1,23 +1,24 @@
 require "./config"
 require "./socket"
 require "./module"
+require "json"
 
 
-def cycle
+def cycle()
   puts "hi"
   cycle()
 end
 
 include Config
 
-def init
+def init()
   basic_socket = Socket.new
   #puts basic_socket.@test
-  basic_socket.open
-  config = load_config
-  puts config
+  basic_socket.open()
+  config = JSON.parse(load_config())
+  #puts config_text
   basic_module = Module.new
-  basic_module.load_module
+  puts config["startup modules"]
   #cycle()
 end
 

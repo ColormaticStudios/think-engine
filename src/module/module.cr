@@ -2,10 +2,7 @@ require "lua"
 
 
 class Module
-  def load_module
-    Lua.run %q{
-      local hello_message = table.concat({ "Hello", "from", "Lua!" }, " ")
-      print(hello_message)
-    } # => prints "Hello from Lua!"
+  def load_module(config)
+    Lua.run file.new("#{Path.home}/.local/share/think/modules/#{config}/main.lua")
   end
 end
