@@ -12,8 +12,10 @@ if [ -n "$1" ]; then
   fi
   echo "building thinking engine..."
 
-  mkdir bin
-  crystal build src/main.cr -o bin/think --$mode
+  if [ ! -d "./bin" ]; then
+    mkdir bin
+  fi
+  crystal build src/main.cr -o bin/think --error-trace --$mode
 
 
   if [ "$?" == 0 ]; then
