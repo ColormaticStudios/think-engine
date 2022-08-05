@@ -2,6 +2,7 @@ require "./config"
 require "./socket"
 require "./module"
 require "json"
+include Config
 
 
 def cycle()
@@ -9,7 +10,6 @@ def cycle()
   cycle()
 end
 
-include Config
 
 def init()
   basic_socket = Socket.new
