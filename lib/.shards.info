@@ -4,3 +4,6 @@ shards:
   lua:
     git: https://github.com/veelenga/lua.cr.git
     version: 0.2.0
+  forloop:
+    git: https://github.com/iainmon/forloop.cr.git
+    version: 0.1.0+git.commit.25ce62a5f61601d00308109c14907d40e1478863
