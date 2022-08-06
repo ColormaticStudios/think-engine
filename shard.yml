@@ -10,8 +10,6 @@ authors:
 dependencies:
   lua:
     github: veelenga/lua.cr
-  forloop:
-    github: iainmon/forloop.cr
 
 # development_dependencies:
 #   webmock:
