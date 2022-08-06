@@ -16,6 +16,7 @@ if [ -n "$1" ]; then #test if there is an argument
   echo "$(tput setaf 3)building thinking engine...$(tput sgr0)"
 
   if [ ! -d "./bin" ]; then #test if the bin file exists
+    echo "$(tput setaf 4)bin directory doesn't exist. Possibly first time build, creating now.$(tput sgr0)"
     mkdir bin #if not, make it
   fi
   crystal build src/main.cr -o bin/think --error-trace --$mode #actually build the program with the build options
