@@ -12,10 +12,14 @@ end
 
 
 def init()
-  basic_socket = Socket.new
-  basic_socket.open()
   config = JSON.parse(load_config())
-  puts config["startup modules"]
+  modules = Hash(String, Module).new
+  list_of_startup_modules = config["startup modules"].as_a
+  list_of_startup_modules.each {|x|
+    s = x.as_s
+    modules[s] = Module.new
+    modules[s].load_module(s)
+  }
   #cycle()
 end
 
