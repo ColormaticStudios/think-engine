@@ -1,7 +1,7 @@
 require "json"
 require "file_utils"
 
-Default_config = %q({"startup modules": ["basic module", "context"]})
+Default_config = %q({"startup modules": ["basic module"]})
 
 module Config
   def load_config()
