@@ -3,6 +3,8 @@ require "file_utils"
 
 Default_config = %q({"startup modules": ["basic module"]})
 
+Basic_module = %q(print("test"))
+
 module Config
   def load_config()
     if File.file?("#{Path.home}/.local/share/think/config.json") #test if the config file exists
@@ -22,6 +24,18 @@ module Config
         File.write("#{Path.home}/.local/share/think/config.json", Default_config) #create the config file
         config_text = File.read("#{Path.home}/.local/share/think/config.json")
 
+        #ask if first time setup should be ran
+        puts "since the config file was just created, should first time setup be ran? (y/n)"
+				print("> ")
+				option = gets
+				exit if option.nil? # Ctrl+D
+				option_text = option.presence
+				if option_text == "y"
+          #first time setup here
+					FileUtils.mkdir_p("#{Path.home}/.local/share/think/modules/basic module")
+          File.write("#{Path.home}/.local/share/think/modules/basic module/main.lua", Basic_module)
+				end
+
         return config_text
       else
         if option_text == "n"
@@ -32,7 +46,7 @@ module Config
         end
       end
     end
-    raise "no json"
+    raise "no config"
     #return JSON.parse(Default_config) #give the config as a hash
   end
 end
