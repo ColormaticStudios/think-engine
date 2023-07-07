@@ -1,7 +1,13 @@
 require "json"
 require "file_utils"
 
-Default_config = %q({"startup modules": ["basic module"]})
+Default_config = %q(
+{
+	"startup modules": ["basic module"],
+	"socket": {
+		"port": 3000
+	}
+})
 
 Basic_module = %q(print("This is the basic plugin. It is a demonstration of how this program works."))
 
